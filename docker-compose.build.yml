@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: arsernst/thp-frontend:latest
+    build:
+      context: ./frontend 
+      dockerfile: Dockerfile
+
+
+  backend:    
+    image: arsernst/thp-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
