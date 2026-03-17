@@ -1,0 +1,259 @@
+/* BeforeAfterCarousel.module.css */
+.carouselContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.slideContainer {
+  flex: 1;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.slideNumber {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.imagePair {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.imageItem {
+  flex: 1;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imageItem:hover .image {
+  transform: scale(1.02);
+}
+
+.imageLabel {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+
+.projectTitle {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.navButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background: #f5f5f5;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #999;
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  background: #999;
+  transform: scale(1.2);
+}
+
+.activeIndicator {
+  background: #ff4d4d;
+  transform: scale(1.2);
+}
+
+/* Медиа-запросы для планшетов */
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .carousel {
+    gap: 10px;
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .imageWrapper {
+    padding: 15px;
+  }
+
+  .imagePair {
+    gap: 10px;
+  }
+
+  .imageLabel {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .projectTitle {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+}
+
+/* Медиа-запросы для мобильных */
+@media (max-width: 576px) {
+  .imagePair {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .slideNumber {
+    top: 15px;
+    right: 15px;
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .imageItem {
+    width: 100%;
+  }
+
+  .imageLabel {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .indicators {
+    gap: 6px;
+    margin-top: 20px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .navButton {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 360px) {
+  .carousel {
+    gap: 5px;
+  }
+
+  .navButton {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .imageWrapper {
+    padding: 10px;
+  }
+}

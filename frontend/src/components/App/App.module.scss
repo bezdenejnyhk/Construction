@@ -1,0 +1,26 @@
+@import "../../styles/responsive.scss";
+.app {
+  text-align: center;
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background: var(--cl-background-primary);
+}
+
+.grass {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px; /* Ширина изображения */
+  z-index: 80;
+  //background: url(../../images/grass.svg) repeat-y right top; /* Путь к изображению */
+  background-attachment: fixed;
+}
+
+@include responsive(phone) {
+  .grass {
+    width: 0px;
+  }
+}
