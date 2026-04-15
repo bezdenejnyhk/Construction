@@ -1,9 +1,9 @@
 import { Route, Routes} from "react-router-dom";
 import { FC, useEffect } from "react";
 import styles from "./App.module.scss";
-import { HomePage } from "../../pages";
 import { Header } from "../layout";
 import { NotFound } from "../../pages/NotFound/NotFound";
+import { HomePage } from "../../pages/HomePage/HomePage";
 
 export const App: FC = () => {
 
