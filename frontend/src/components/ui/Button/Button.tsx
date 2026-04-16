@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, CSSProperties, ReactNode, memo } from "react";
 import styles from "./Button.module.scss";
 
 export enum ThemeButton {
-  WHITE = "white",
+  PRIMARY = "primary",
   BLACK = "black",
 }
 
@@ -17,7 +17,7 @@ export const Button = memo((props: IButtonProps) => {
   const {
     style,
     disabled = false,
-    theme = ThemeButton.WHITE,
+    theme = ThemeButton.PRIMARY,
     children,
     ...otherProps
   } = props;

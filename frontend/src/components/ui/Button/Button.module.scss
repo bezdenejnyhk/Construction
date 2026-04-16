@@ -1,38 +1,59 @@
+@import '../../../styles/variables/variables.scss';
 @import '../../../styles/responsive.scss';
 
 .button {
   outline: none;
-  background-color: #EFA359;
-  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
+  font-family: var(--font-family-secondary);
   padding: 16px 40px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
   width: auto;
-  min-width: 280px;
-
-  &:hover {
-    background-color: #d88c3f;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(239, 163, 89, 0.2);
-  }
-
-  &:active {
-    background-color: #c47a2f;
-    transform: translateY(0);
-  }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
+  }
+}
+
+.black {
+  background: rgba(53, 53, 53, 0.69);
+  border: 2px solid rgba(239, 163, 90, 1);
+  color: var(--cl-white);
+  height: 60px;
+  width: 400px;
+
+  &:hover {
+   background: rgba(53, 53, 53, 0.85);
+   border-color: rgba(239, 163, 90, 1);
+  }
+
+  &:active {
+    background: rgba(53, 53, 53, 0.9);
+  }
+}
+
+.primary {
+  background: var(--cl-black);
+  border: 2px solid var(--cl-black);
+  height: px;
+  width: px;
+
+  &:hover {
+    background: lighten(#2D2626, 10%);
+    border-color: lighten(#2D2626, 10%);
+  }
+
+  &:active {
+    background: darken(#2D2626, 5%);
   }
 }
 
