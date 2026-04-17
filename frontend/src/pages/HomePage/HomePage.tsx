@@ -1,10 +1,32 @@
 import { FC } from "react";
 import { Button, ThemeButton } from "../../components/ui/Button/Button";
+import { BeforeAfter } from "../../components/Before_After/BeforeAfter";
+import { Contacts } from "../../components/Contacts/Contacts";
+
 import styles from "./HomePage.module.scss";
 import heroImage from "../../images/homepage.png";
 import aboutImage from "../../images/about_image.png";
+import  BeforeAfterImage  from "../../images/before_after.png";
+import contactsImage from "../../images/contacts.png"
+
 
 export const HomePage: FC = () => {
+
+  const beforeAfterData = {
+    title: "RENOVATIONS THAT CONVINCE",
+    paragraphs: [
+      "Every project is unique. In our references,we showcase selected work in the areas of apartment renovation, bathroom modernization, interior fit-out, and conversions in existing buildings.",
+      "Before-and-after projects clearly show how older or renovation-needy properties are transformed into modern, functional, and high-quality spaces.",
+    ]
+  }
+
+    const contactsData = {
+    backgroundImage: contactsImage,
+    title: "ARE YOU PLANNING A RENOVATION OR MODERNIZATION?",
+    description: "Talk to us about your project. We will advise you personally and develop a solution that fits your property, your budget, and your requirements.",
+    buttonText: "Request a Non-Binding Quote",
+  }
+
   return (
     <div className={styles.container}>
       <section 
@@ -52,6 +74,20 @@ export const HomePage: FC = () => {
          <img src={aboutImage} alt="Renovation" className={styles.about_image} />
        </div>
       </section>  
+
+      <BeforeAfter
+        title={beforeAfterData.title}
+        paragraphs={beforeAfterData.paragraphs}
+        imageSrc={BeforeAfterImage}
+        imageAlt="Before and After works"
+      />
+
+      <Contacts 
+        backgroundImage={contactsData.backgroundImage}
+        title={contactsData.title}
+        description={contactsData.description}
+        buttonText={contactsData.buttonText}
+      />
     </div>
   );
 };

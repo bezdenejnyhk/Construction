@@ -11,7 +11,6 @@ export const App: FC = () => {
     <div className={styles.app}>
       <div className={styles.container}>
         <Header />
-        <div className={styles.grass}></div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
