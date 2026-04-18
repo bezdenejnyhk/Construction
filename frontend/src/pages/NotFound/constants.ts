@@ -3,5 +3,5 @@ export { NotFound } from './NotFound';
 
 export const dataNotFound ={
     [LANG.EN]:  "Not Found",
-    [LANG.FR]: "Non Trouvé"
+    [LANG.DE]: "Nicht gefunden"
 } as const
