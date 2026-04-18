@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import logo from "../../../images/logo.svg";
-import { routesEN } from "./constant";
+import { routesEN } from "../constant";
+import phone from '../../../images/icon/ph_phone.svg'
 
 export const Header: FC = () => {
 
@@ -18,7 +19,10 @@ export const Header: FC = () => {
             </li>
           ))}
         </ul>
-        <p className={styles.phone}>Phone: +79999999999</p>
+        <a href='tel:+74958034053' className={styles.phone}>
+            <img src={phone} alt="Phone"/>
+            +7 (495) 803-40-53
+          </a>
       </div>
     </div>
   );

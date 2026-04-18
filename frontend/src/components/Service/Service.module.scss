@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 39px 30px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 412px;
+  min-height: 364px;
+  border-radius: 7px;
+  border: 4px solid var(--cl-primary);
+  background: var(--cl-secondary);
+}
+
+.title {
+  color: var(--cl-black);
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.text {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: var(--cl-black);
+}

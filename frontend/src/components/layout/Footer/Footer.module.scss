@@ -1,0 +1,137 @@
+@import "../../../styles/responsive.scss";
+
+.header {
+  background-color: var(--cl-primary);
+  min-height: 115px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.logo {
+    width: 110px;
+    height: 110px;
+  }
+
+.nav {
+  max-width: 2000px;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.routes {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 80px;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s linear;
+  margin: 0;
+  font-weight: 600;
+  font-family: "Playfair Display";
+  font-size: 20px;
+  color: var(--cl-black);
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.logo {
+  width: 250px;
+}
+
+.phone {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--cl-black);
+  font-family: "Playfair Display";
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (min-width: 1920px) {
+  .header {
+    background-size: 100% 80%;
+  }
+}
+
+@include responsive(fullscreen) {
+  .routes {
+    gap: 130px;
+  }
+
+  .link {
+    &_name {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  .logo {
+    width: 110px;
+  }
+}
+
+@include responsive(screen) {
+  .routes {
+    gap: 42px;
+  }
+
+  .link {
+    &_name {
+      font-size: 9px;
+      line-height: 14px;
+    }
+  }
+
+  .logo {
+    width: 129px;
+  }
+
+  .phone {
+    font-size: 18px;
+  }
+}
+
+@include responsive(tablet) {
+  .routes {
+    gap: 32px;
+  }
+
+  .link {
+    &_name {
+      font-size: 7px;
+      line-height: 12px;
+    }
+  }
+}
+
+@include responsive(phone) {
+  .nav {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .routes {
+    min-height: 98px;
+    display: none;
+  }
+  .logo {
+    width: 115px;
+  }
+}

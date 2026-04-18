@@ -4,6 +4,7 @@ import styles from "./App.module.scss";
 import { Header } from "../layout";
 import { NotFound } from "../../pages/NotFound/NotFound";
 import { HomePage } from "../../pages/HomePage/HomePage";
+import { Footer } from "../layout/Footer/Footer";
 
 export const App: FC = () => {
 
@@ -11,13 +12,12 @@ export const App: FC = () => {
     <div className={styles.app}>
       <div className={styles.container}>
         <Header />
-        <div className={styles.grass}></div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Header />
       </div>
+      <Footer />
     </div>
   );
 };

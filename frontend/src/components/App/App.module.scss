@@ -5,18 +5,7 @@
   width: 100%;
   height: auto;
   margin: auto;
-  background: var(--cl-background-primary);
-}
-
-.grass {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 60px; /* Ширина изображения */
-  z-index: 80;
-  //background: url(../../images/grass.svg) repeat-y right top; /* Путь к изображению */
-  background-attachment: fixed;
+  background: var(--cl-secondary);
 }
 
 @include responsive(phone) {

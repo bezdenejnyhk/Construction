@@ -42,18 +42,12 @@
 }
 
 .primary {
-  background: var(--cl-black);
-  border: 2px solid var(--cl-black);
-  height: px;
-  width: px;
+  background: var(--cl-primary);
+  color: var(--cl-white);
+  border: none;
 
   &:hover {
-    background: lighten(#2D2626, 10%);
-    border-color: lighten(#2D2626, 10%);
-  }
-
-  &:active {
-    background: darken(#2D2626, 5%);
+    opacity: 0.8;
   }
 }
 
