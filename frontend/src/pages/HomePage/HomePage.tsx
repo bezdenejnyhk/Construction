@@ -1,5 +1,8 @@
 import { FC } from "react";
 import { Button, ThemeButton } from "../../components/ui/Button/Button";
+import { BeforeAfter } from "../../components/Before_After/BeforeAfter";
+import { Contacts } from "../../components/Contacts/Contacts";
+
 import styles from "./HomePage.module.scss";
 import heroImage from "../../images/homepage.png";
 import aboutImage from "../../images/about_image.png";
@@ -8,8 +11,26 @@ import { chooseUs, services, whoWork } from "./constants";
 import { ThemeTitle, Title } from "../../components/ui/Title/Title";
 import { ChooseUs } from "../../components/ChooseUs/ChooseUs";
 import { WhoWork } from "../../components/WhoWork/WhoWork";
+import BeforeAfterImage from "../../images/before_after.png";
+import contactsImage from "../../images/contacts.png";
 
 export const HomePage: FC = () => {
+  const beforeAfterData = {
+    title: "RENOVATIONS THAT CONVINCE",
+    paragraphs: [
+      "Every project is unique. In our references,we showcase selected work in the areas of apartment renovation, bathroom modernization, interior fit-out, and conversions in existing buildings.",
+      "Before-and-after projects clearly show how older or renovation-needy properties are transformed into modern, functional, and high-quality spaces.",
+    ],
+  };
+
+  const contactsData = {
+    backgroundImage: contactsImage,
+    title: "ARE YOU PLANNING A RENOVATION OR MODERNIZATION?",
+    description:
+      "Talk to us about your project. We will advise you personally and develop a solution that fits your property, your budget, and your requirements.",
+    buttonText: "Request a Non-Binding Quote",
+  };
+
   return (
     <div className={styles.container}>
       <section
@@ -110,67 +131,20 @@ export const HomePage: FC = () => {
           deadlines, and processes are on track.
         </p>
       </section>
+
+      <BeforeAfter
+        title={beforeAfterData.title}
+        paragraphs={beforeAfterData.paragraphs}
+        imageSrc={BeforeAfterImage}
+        imageAlt="Before and After works"
+      />
+
+      <Contacts
+        backgroundImage={contactsData.backgroundImage}
+        title={contactsData.title}
+        description={contactsData.description}
+        buttonText={contactsData.buttonText}
+      />
     </div>
   );
 };
-
-{
-  /* <section className={styles.intro}>
-        <h1 className={styles.intro_title}>
-          <span className={styles.span}>FREE </span>up your time{" "}
-        </h1>
-        <p className={styles.intro_text}>
-          <span className={styles.span}>WE TAKE </span>over the coordination of{" "}
-          <span className={styles.span}>ALL WORK</span> , planning estimates and
-          deadlines
-        </p>
-        <img src={imageHome} alt="Image" className={styles.intro_img} />
-      </section>
-      <section className={styles.aboutUs} id="About us">
-        <h2 className={styles.span_item}>
-          Single Source Repairs: Peace of mind and warranty
-        </h2>
-        <p className={styles.aboutUs_text}>
-          Our specialization is the construction of private houses and complex
-          renovation of premises. We have combined professional designers,
-          engineers and finishers under one brand to ensure that you get the
-          perfect result without intermediaries.
-        </p>
-        <div className={styles.aboutUs_block}>
-          <img src={livingRoom} alt="Image" className={styles.aboutUs_img} />
-          <ul className={styles.aboutUs_ul}>
-            {services.map((item) => (
-              <li className={styles.aboutUs_li}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section className={styles.service} id="Services">
-        <h2 className={styles.service_span}>What are we doing?</h2>
-        <p className={styles.service_underSpan}>
-          We build turnkey homes and renovate apartments. Full structural
-          reconstruction, interior finish, and personal manager—all in one
-          place. Deadlines, budget, and quality are on us.
-        </p>
-        <ul className={styles.service_ul}>
-          {works.map((item) => (
-            <li className={styles.service_li}>
-              <h4 className={styles.service_title}>{item.title}</h4>
-              <p className={styles.service_text}>
-                {renderWithLineBreaks(item.text)}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className={styles.work} id="Our work">
-        <h2 className={styles.work_title}>Examples of our work</h2>
-        <BeforeAfterCarousel slides={slides} />
-      </section>
-      <section className={styles.contact} id="Contact">
-        <h2 className={styles.contact_span}>
-          Leave a request and we will contact you
-        </h2>
-        <Form />
-      </section> */
-}
