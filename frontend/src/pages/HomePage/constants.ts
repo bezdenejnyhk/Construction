@@ -13,6 +13,11 @@ import contactsImage from "../../images/contacts.png";
 import BeforeAfterImage from "../../images/before_after.png";
 import subimg1 from "../../images/subpage/image80.png";
 import subimg2 from "../../images/subpage/image81.png";
+import slide1 from "../../images/slider/slide1.png";
+import slide2 from "../../images/slider/slide2.png";
+import slide3 from "../../images/slider/slide3.png";
+import slide4 from "../../images/slider/slide4.png";
+import slide5 from "../../images/slider/slide5.png";
 
 export const MAIN_CONTENT = {
   [LANG.EN]: {
@@ -107,6 +112,43 @@ export const MAIN_CONTENT = {
     },
     work: {
       title: "HOW WE WORK",
+      sliderData: [
+        {
+          id: 1,
+          title: "Consultation and Initial Assessment",
+          description:
+            "We discuss your wishes, examine the conditions on site, and identify the renovation requirements.",
+          image: slide1,
+        },
+        {
+          id: 2,
+          title: "Planning and Concept",
+          description:
+            "Based on your requirements, we develop an individual concept including a timeline and budget framework.",
+          image: slide2,
+        },
+        {
+          id: 3,
+          title: "Coordination of All Trades",
+          description:
+            "We handle the coordination and management of all trades involved in the project.",
+          image: slide3,
+        },
+        {
+          id: 4,
+          title: "Execution and Site Management",
+          description:
+            "Throughout the construction phase, we ensure a structured process, quality control, and on-time execution.",
+          image: slide4,
+        },
+        {
+          id: 5,
+          title: "Completion and Handover",
+          description:
+            "After all work has been completed, the final inspection and handover of your modernized property takes place together with you.",
+          image: slide5,
+        },
+      ],
     },
     chooseUs: {
       title: "WHY CHOOSE US?",
@@ -280,6 +322,43 @@ export const MAIN_CONTENT = {
     },
     work: {
       title: "HOW WE WORK",
+      sliderData: [
+        {
+          id: 1,
+          title: "Consultation and Initial Assessment",
+          description:
+            "We discuss your wishes, examine the conditions on site, and identify the renovation requirements.",
+          image: slide1,
+        },
+        {
+          id: 2,
+          title: "Planning and Concept",
+          description:
+            "Based on your requirements, we develop an individual concept including a timeline and budget framework.",
+          image: slide2,
+        },
+        {
+          id: 3,
+          title: "Coordination of All Trades",
+          description:
+            "We handle the coordination and management of all trades involved in the project.",
+          image: slide3,
+        },
+        {
+          id: 4,
+          title: "Execution and Site Management",
+          description:
+            "Throughout the construction phase, we ensure a structured process, quality control, and on-time execution.",
+          image: slide4,
+        },
+        {
+          id: 5,
+          title: "Completion and Handover",
+          description:
+            "After all work has been completed, the final inspection and handover of your modernized property takes place together with you.",
+          image: slide5,
+        },
+      ],
     },
     chooseUs: {
       title: "WHY CHOOSE US?",

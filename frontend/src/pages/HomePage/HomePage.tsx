@@ -8,10 +8,11 @@ import heroImage from "../../images/homepage.png";
 import aboutImage from "../../images/about_image.png";
 import { Service } from "../../components/Service/Service";
 import { MAIN_CONTENT } from "./constants";
+import { useAppSelector } from "../../services/hooks";
 import { ThemeTitle, Title } from "../../components/ui/Title/Title";
 import { ChooseUs } from "../../components/ChooseUs/ChooseUs";
 import { WhoWork } from "../../components/WhoWork/WhoWork";
-import { useAppSelector } from "../../services/hooks";
+import Slider from "../../components/Slider/Slider";
 
 export const HomePage: FC = () => {
   const lang = useAppSelector((state) => state.lang.lang);
@@ -88,7 +89,7 @@ export const HomePage: FC = () => {
       </section>
       <section className={styles.work}>
         <Title theme={ThemeTitle.PRIMARY}>{content.work.title}</Title>
-        <p>Slider</p>
+        <Slider sliders={content.work.sliderData} />
       </section>
       <section className={styles.chooseUs}>
         <Title theme={ThemeTitle.BLACK}>{content.chooseUs.title}</Title>
