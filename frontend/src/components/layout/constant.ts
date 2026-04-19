@@ -3,11 +3,12 @@ import flag_en from "../../images/icon/EN_flag.svg";
 import flag_de from "../../images/icon/DE_flag.svg";
 
 export const routes = {
-  aboutUs: "About us",
-  services: "Services",
-  ourCompany: "About the company",
-  portfolio: "Portfolio",
-  contacts: "Contacts",
+  ABOUT_US: "about-us",
+  SERVICES: "services",
+  OUR_COMPANY: "our-company",
+  PORTFOLIO: "portfolio",
+  CONTACTS: "contacts",
+
 };
 
 export const headerContent = {
@@ -17,23 +18,23 @@ export const headerContent = {
     routes: [
       {
         name: "About us",
-        path: `${routes.aboutUs}/en`,
+        path: routes.ABOUT_US,
       },
       {
         name: "Services",
-        path: `${routes.services}/en`,
+        path: routes.SERVICES,
       },
       {
         name: "About the company",
-        path: `${routes.ourCompany}/en`,
+        path: routes.OUR_COMPANY,
       },
       {
         name: "Portfolio",
-        path: `${routes.portfolio}/en`,
+        path: routes.PORTFOLIO,
       },
       {
         name: "Contacts",
-        path: `${routes.contacts}/en`,
+        path: routes.CONTACTS,
       },
     ],
   },
@@ -43,23 +44,23 @@ export const headerContent = {
   routes: [
     {
       name: "Über uns",
-      path: `${routes.aboutUs}/de`,
+      path: routes.ABOUT_US,
     },
     {
       name: "Dienstleistungen",
-      path: `${routes.services}/de`,
+      path:routes.SERVICES,
     },
     {
       name: "Über das Unternehmen",
-      path: `${routes.ourCompany}/de`,
+      path: routes.OUR_COMPANY,
     },
     {
       name: "Portfolio",
-      path: `${routes.portfolio}/de`,
+      path: routes.PORTFOLIO,
     },
     {
       name: "Kontakte",
-      path: `${routes.contacts}/de`,
+      path: routes.CONTACTS,
     },
   ],
 },

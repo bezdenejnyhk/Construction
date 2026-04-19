@@ -30,43 +30,20 @@ export const HomePage: FC = () => {
       >
         <div className={styles.hero_overlay}></div>
         <div className={styles.hero_content}>
-          <p className={styles.hero_supertitle}>
-            YOUR PARTNER FOR RENOVATION, INTERIOR FIT-OUT, AND MODERNIZATION
-          </p>
-          <h1 className={styles.hero_title}>BUILDOVA</h1>
-          <p className={styles.hero_description}>
-            We carry out renovations, modernizations, and conversions in
-            existing buildings reliably, on schedule, and professionally. From
-            the initial planning stage to final handover, we coordinate all
-            trades and ensure smooth processes
-          </p>
-          <Button theme={ThemeButton.BLACK}>Request a Consultation Now</Button>
+          <p className={styles.hero_supertitle}>{content.hero.supertitle}</p>
+          <h1 className={styles.hero_title}>{content.hero.title}</h1>
+          <p className={styles.hero_description}>{content.hero.description}</p>
+          <Button theme={ThemeButton.BLACK}>{content.hero.buttonText}</Button>
         </div>
       </section>
 
-      <section className={styles.about}>
+      <section className={styles.about} id="about-us">
         <div className={styles.about_content}>
-          <h2 className={styles.about_title}>
-            RENOVATION WITH STRUCRURE, EXPERIENCE, AND RESPONSIBILITY
-          </h2>
+          <h2 className={styles.about_title}>{content.about.title}</h2>
 
-          <p className={styles.about_text}>
-            A renovation is more than just construction work. It requires clear
-            processes, precise planning, and reliable coordination of everyone
-            involved. That is exactly what we stand for
-          </p>
-          <p className={styles.about_text}>
-            We support our clients from the initial idea through to completion
-            and offer complete renovations from one source. Through close
-            coordination of all trades, transparent scheduling and cost
-            planning, and dedicated site management, we ensure safety, quality,
-            and efficiency throughout the entire project.
-          </p>
-          <p className={styles.about_text}>
-            Our focus is on conversions in existing buildings, apartment
-            modernization, bathroom and kitchen renovations, as well as
-            sustainable and functional solutions for long-term value retention
-          </p>
+          <p className={styles.about_text}>{content.about.text1}</p>
+          <p className={styles.about_text}>{content.about.text2}</p>
+          <p className={styles.about_text}>{content.about.text3}</p>
         </div>
 
         <div className={styles.about_image_wrapper}>
@@ -77,21 +54,21 @@ export const HomePage: FC = () => {
           />
         </div>
       </section>
-      <section className={styles.services}>
+      <section className={styles.services} id="services">
         <Title theme={ThemeTitle.BLACK}>{content.service.title}</Title>
         <ul className={styles.services_list}>
           {content?.service?.services?.map((item, index) => (
             <li key={index} className={styles.services_item}>
-              <Service {...item} id={index + 1}/>
+              <Service {...item} id={index + 1} />
             </li>
           ))}
         </ul>
       </section>
-      <section className={styles.work}>
+      <section className={styles.work} id="portfolio">
         <Title theme={ThemeTitle.PRIMARY}>{content.work.title}</Title>
         <Slider sliders={content.work.sliderData} />
       </section>
-      <section className={styles.chooseUs}>
+      <section className={styles.chooseUs} id="our-company">
         <Title theme={ThemeTitle.BLACK}>{content.chooseUs.title}</Title>
         <ul className={styles.chooseUs_list}>
           {content.chooseUs.chooseUs.map((item, index) => (
@@ -123,6 +100,7 @@ export const HomePage: FC = () => {
       </section>
 
       <Contacts
+        idSection="contacts"
         backgroundImage={content.contacts.backgroundImage}
         title={content.contacts.title}
         description={content.contacts.description}

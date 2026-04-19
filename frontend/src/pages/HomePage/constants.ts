@@ -21,8 +21,23 @@ import slide5 from "../../images/slider/slide5.png";
 
 export const MAIN_CONTENT = {
   [LANG.EN]: {
-    hero: {},
-    about: {},
+    hero: {
+      supertitle:
+        "YOUR PARTNER FOR RENOVATION, INTERIOR FIT-OUT, AND MODERNIZATION",
+      title: "BUILDOVA",
+      description:
+        "We carry out renovations, modernizations, and conversions in existing buildings reliably, on schedule, and professionally. From the initial planning stage to final handover, we coordinate all trades and ensure smooth processes",
+      buttonText: "Request a Consultation Now",
+    },
+    about: {
+      title: "RENOVATION WITH STRUCRURE, EXPERIENCE, AND RESPONSIBILITY",
+      text1:
+        "A renovation is more than just construction work. It requires clear processes, precise planning, and reliable coordination of everyone involved. That is exactly what we stand for",
+      text2:
+        "We support our clients from the initial idea through to completion and offer complete renovations from one source. Through close coordination of all trades, transparent scheduling and cost planning, and dedicated site management, we ensure safety, quality, and efficiency throughout the entire project.",
+      text3:
+        "Our focus is on conversions in existing buildings, apartment renovations, and bathroom modernizations. We also carry out interior fit-out work, facade and roof renovations, energy-efficient measures, and barrier-free living solutions.",
+    },
     service: {
       title: "OUR SERVICES",
       services: [
@@ -231,8 +246,23 @@ export const MAIN_CONTENT = {
     },
   },
   [LANG.DE]: {
-    hero: {},
-    about: {},
+    hero: {
+      supertitle:
+        "YOUR PARTNER FOR RENOVATION, INTERIOR FIT-OUT, AND MODERNIZATION",
+      title: "BUILDOVA",
+      description:
+        "We carry out renovations, modernizations, and conversions in existing buildings reliably, on schedule, and professionally. From the initial planning stage to final handover, we coordinate all trades and ensure smooth processes",
+      buttonText: "Request a Consultation Now",
+    },
+    about: {
+      title: "RENOVATION WITH STRUCRURE, EXPERIENCE, AND RESPONSIBILITY",
+      text1:
+        "A renovation is more than just construction work. It requires clear processes, precise planning, and reliable coordination of everyone involved. That is exactly what we stand for",
+      text2:
+        "We support our clients from the initial idea through to completion and offer complete renovations from one source. Through close coordination of all trades, transparent scheduling and cost planning, and dedicated site management, we ensure safety, quality, and efficiency throughout the entire project.",
+      text3:
+        "Our focus is on conversions in existing buildings, apartment renovations, and bathroom modernizations. We also carry out interior fit-out work, facade and roof renovations, energy-efficient measures, and barrier-free living solutions.",
+    },
     service: {
       title: "OUR SERVICES",
       services: [

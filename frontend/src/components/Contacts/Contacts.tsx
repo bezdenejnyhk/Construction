@@ -8,6 +8,7 @@ interface ContactsProps {
  description: string;
  buttonText: string;
  onButtonClick?: () => void;
+ idSection?: string;
 }
 
 export const Contacts: FC<ContactsProps> = ({
@@ -16,9 +17,11 @@ export const Contacts: FC<ContactsProps> = ({
  description,
  buttonText,
  onButtonClick,
+ idSection,
 }) => {
   return (
     <section
+    id={idSection}
       className={styles.contacts}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
