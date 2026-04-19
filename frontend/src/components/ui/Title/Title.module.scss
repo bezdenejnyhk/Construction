@@ -1,3 +1,5 @@
+@import "../../../styles/responsive.scss";
+
 .primary {
   color: var(--cl-primary);
   font-family: Montserrat;
@@ -18,4 +20,15 @@
   line-height: normal;
   text-transform: uppercase;
   text-align: left;
+}
+
+
+@include responsive(tablet) {
+.primary {
+  font-size: 30px;
+}
+
+.black {
+  font-size: 30px;
+}
 }

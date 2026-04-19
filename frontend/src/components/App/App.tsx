@@ -7,6 +7,7 @@ import { HomePage } from "../../pages/HomePage/HomePage";
 import { Footer } from "../layout/Footer/Footer";
 import { useAppSelector } from "../../services/hooks";
 import { LANG } from "../../types/lang";
+import { Subpage } from "../../pages/Subpage/Subpage";
 
 export const App: FC = () => {
   const lang = useAppSelector((state) => state.lang.lang);
@@ -31,6 +32,7 @@ export const App: FC = () => {
         <Header />
         <Routes>
           <Route path={`/${lang}`} element={<HomePage />} />
+          <Route path={`/services/:id${lang}`} element={<Subpage />} />
           <Route path={`*${lang}`} element={<NotFound />} />
         </Routes>
       </div>

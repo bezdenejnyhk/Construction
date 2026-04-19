@@ -5,17 +5,26 @@ import { Button } from "../ui/Button/Button";
 type ServiceProps = {
   title: string;
   description: string;
-  url: string;
+  id?: number; 
+  buttonText?: string
 };
 
-export const Service: FC<ServiceProps> = ({ title, description, url }) => {
+export const Service: FC<ServiceProps> = ({ title, description, id, buttonText }) => {
+  const handleClick = () => {
+    if (id) {
+      window.location.href = `/services/${id}`;
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h4 className={styles.title}>{title}</h4>
       <p className={styles.text}>{description}</p>
-      <Button onClick={() => (window.location.href = url)}>
-        More detailed
-      </Button>
+      {buttonText && (
+        <Button onClick={handleClick}>
+          {buttonText}
+        </Button>
+      )}
     </div>
   );
 };

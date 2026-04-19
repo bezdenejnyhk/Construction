@@ -29,7 +29,8 @@
   border: 2px solid rgba(239, 163, 90, 1);
   color: var(--cl-white);
   height: 60px;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
 
   &:hover {
    background: rgba(53, 53, 53, 0.85);
@@ -51,14 +52,14 @@
   }
 }
 
-// @include responsive(fullscreen) {
-//   .button {
-//     height: 46px;
-//     padding: 0px 48px;
-//     font-size: 14px;
-//     line-height: 24px;
-//   }
-// }
+@include responsive(fullscreen) {
+  .button {
+    height: 46px;
+    padding: 0px 48px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
 
 // @include responsive(screen) {
 //   .button {
@@ -79,12 +80,12 @@
 //   }
 // }
 
-// @include responsive(phone) {
-//   .button {
-//     padding: 0 43px;
-//     height: 42px;
-//     font-size: 13px;
-//     line-height: 1;
-//     border-radius: 5px;
-//   }
-// }
+@include responsive(phone) {
+  .button {
+    padding: 0 43px;
+    height: 42px;
+    font-size: 13px;
+    line-height: 1;
+    border-radius: 5px;
+  }
+}

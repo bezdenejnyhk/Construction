@@ -1,0 +1,41 @@
+@import "../../styles/responsive.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 0 auto;
+  padding: 80px 100px;
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(2, 412px);
+    gap: 50px;
+    justify-items: center;
+    justify-content: center;
+  }
+}
+
+.text {
+  color: var(--cl-black);
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@include responsive(screen) {}
+@include responsive(tablet) {
+    .content {
+        padding: 50px 40px;
+        &_list {
+            grid-template-columns: repeat(1, 312px);
+        }
+    }
+
+    .text {
+        font-size: 24px;
+    }
+}
+@include responsive(phone) {}

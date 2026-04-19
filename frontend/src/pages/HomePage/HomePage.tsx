@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button, ThemeButton } from "../../components/ui/Button/Button";
 import { BeforeAfter } from "../../components/Before_After/BeforeAfter";
 import { Contacts } from "../../components/Contacts/Contacts";
@@ -7,29 +7,19 @@ import styles from "./HomePage.module.scss";
 import heroImage from "../../images/homepage.png";
 import aboutImage from "../../images/about_image.png";
 import { Service } from "../../components/Service/Service";
-import { chooseUs, services, whoWork } from "./constants";
+import { MAIN_CONTENT } from "./constants";
 import { ThemeTitle, Title } from "../../components/ui/Title/Title";
 import { ChooseUs } from "../../components/ChooseUs/ChooseUs";
 import { WhoWork } from "../../components/WhoWork/WhoWork";
-import BeforeAfterImage from "../../images/before_after.png";
-import contactsImage from "../../images/contacts.png";
+import { useAppSelector } from "../../services/hooks";
 
 export const HomePage: FC = () => {
-  const beforeAfterData = {
-    title: "RENOVATIONS THAT CONVINCE",
-    paragraphs: [
-      "Every project is unique. In our references,we showcase selected work in the areas of apartment renovation, bathroom modernization, interior fit-out, and conversions in existing buildings.",
-      "Before-and-after projects clearly show how older or renovation-needy properties are transformed into modern, functional, and high-quality spaces.",
-    ],
-  };
+  const lang = useAppSelector((state) => state.lang.lang);
+  const [content, setContent] = useState(MAIN_CONTENT[lang]);
 
-  const contactsData = {
-    backgroundImage: contactsImage,
-    title: "ARE YOU PLANNING A RENOVATION OR MODERNIZATION?",
-    description:
-      "Talk to us about your project. We will advise you personally and develop a solution that fits your property, your budget, and your requirements.",
-    buttonText: "Request a Non-Binding Quote",
-  };
+  useEffect(() => {
+    setContent(MAIN_CONTENT[lang]);
+  }, [lang]);
 
   return (
     <div className={styles.container}>
@@ -87,63 +77,55 @@ export const HomePage: FC = () => {
         </div>
       </section>
       <section className={styles.services}>
-        <Title theme={ThemeTitle.BLACK}>OUR SERVICES</Title>
+        <Title theme={ThemeTitle.BLACK}>{content.service.title}</Title>
         <ul className={styles.services_list}>
-          {services.map((service, index) => (
+          {content?.service?.services?.map((item, index) => (
             <li key={index} className={styles.services_item}>
-              <Service {...service} />
+              <Service {...item} id={index + 1}/>
             </li>
           ))}
         </ul>
       </section>
       <section className={styles.work}>
-        <Title theme={ThemeTitle.PRIMARY}>How We Work</Title>
+        <Title theme={ThemeTitle.PRIMARY}>{content.work.title}</Title>
         <p>Slider</p>
       </section>
       <section className={styles.chooseUs}>
-        <Title theme={ThemeTitle.BLACK}>Why Choose Us?</Title>
+        <Title theme={ThemeTitle.BLACK}>{content.chooseUs.title}</Title>
         <ul className={styles.chooseUs_list}>
-          {chooseUs.map((item, index) => (
+          {content.chooseUs.chooseUs.map((item, index) => (
             <li key={index} className={styles.chooseUs_item}>
               <ChooseUs title={item.title} text={item.text} img={item.img} />
             </li>
           ))}
         </ul>
       </section>
+
+      <BeforeAfter
+        title={content.beforeAfter.title}
+        paragraphs={content.beforeAfter.paragraphs}
+        imageSrc={content.beforeAfter.imgeSrc}
+        imageAlt="Before and After works"
+      />
+
       <section className={styles.whoWork}>
-        <Title theme={ThemeTitle.BLACK}>Who We Work For</Title>
+        <Title theme={ThemeTitle.BLACK}>{content.whoWork.title}</Title>
         <ul className={styles.whoWork_list}>
-          {whoWork.map((item, index) => (
+          {content.whoWork.whoWork.map((item, index) => (
             <li key={index} className={styles.whoWork_item}>
               <WhoWork icon={item.icon} title={item.title} />
             </li>
           ))}
         </ul>
-        <p className={styles.whoWork_text}>
-          Whether individual rooms need to be modernized or entire properties
-          renovated, we provide the right solution.
-        </p>
-        <p className={styles.whoWork_text}>
-          A successful renovation requires clear communication. That is why you
-          have dedicated contact persons at your side who support, coordinate,
-          and supervise your project. From the initial consultation to final
-          completion, we keep an eye on every step and ensure that quality,
-          deadlines, and processes are on track.
-        </p>
+        <p className={styles.whoWork_text}>{content.whoWork.text1}</p>
+        <p className={styles.whoWork_text}>{content.whoWork.text2}</p>
       </section>
 
-      <BeforeAfter
-        title={beforeAfterData.title}
-        paragraphs={beforeAfterData.paragraphs}
-        imageSrc={BeforeAfterImage}
-        imageAlt="Before and After works"
-      />
-
       <Contacts
-        backgroundImage={contactsData.backgroundImage}
-        title={contactsData.title}
-        description={contactsData.description}
-        buttonText={contactsData.buttonText}
+        backgroundImage={content.contacts.backgroundImage}
+        title={content.contacts.title}
+        description={content.contacts.description}
+        buttonText={content.contacts.buttonText}
       />
     </div>
   );

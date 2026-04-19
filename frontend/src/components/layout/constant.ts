@@ -13,6 +13,7 @@ export const routes = {
 export const headerContent = {
   [LANG.EN]: {
     flag: flag_en,
+    button: 'Request a Consultation Now',
     routes: [
       {
         name: "About us",
@@ -38,6 +39,7 @@ export const headerContent = {
   },
   [LANG.DE]: {
     flag: flag_de,
+    button: 'Jetzt Beratung anfragen',
   routes: [
     {
       name: "Über uns",

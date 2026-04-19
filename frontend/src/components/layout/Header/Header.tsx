@@ -9,6 +9,7 @@ import { setLang } from "../../../services/slices/lang";
 import { useLocation, useNavigate } from "react-router-dom";
 import arrow from "../../../images/icon/arrow_down.svg";
 import { Gamburger } from "./Gamburger";
+import { Button, ThemeButton } from "../../ui/Button/Button";
 
 export const Header: FC = () => {
   const { lang } = useAppSelector((state) => state.lang);
@@ -35,7 +36,7 @@ export const Header: FC = () => {
   return (
     <div className={styles.header}>
       <div className={styles.nav}>
-        <img className={styles.logo} src={logo} alt="Логотип" />
+        <img className={styles.logo} src={logo} alt="Логотип" onClick={() => navigate("/")} />
         <ul className={styles.routes}>
           {content &&
             "routes" in content &&
@@ -83,46 +84,25 @@ export const Header: FC = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.menu} ${openMenu && styles.open}`}>
+      <div className={`${styles.menu} ${openMenu && styles.menu_open}`}>
+        <div className={styles.menu_phone_block}>
+            <img src={phone} alt="Phone" />
+            <a href="tel:+74958034053" className={styles.menu_phone}>
+              +7 (495) 803-40-53
+            </a>
+          </div>
                 <ul className={styles.menu_routes}>
           {content &&
             "routes" in content &&
             content.routes.map((item: { name: string; path: string; }, index: number) => (
-              <li className={styles.routes_item} key={index}>
-                <a href={"#" + item.path} className={styles.link}>
+              <li className={styles.menu_routes_item} key={index}>
+                <a href={"#" + item.path} className={styles.menu_link}>
                   {item.name}
                 </a>
               </li>
             ))}
+            <Button theme={ThemeButton.BLACK}>{content.button}</Button>
         </ul>
-        <div className={styles.menu_block}>
-          <div className={styles.languages}>
-            <button
-              className={styles.languages__button}
-              onClick={() => setOpenDropDownLang(!openDropDownLang)}
-            >
-              {languagesSmallname[lang]}
-              <img src={content.flag} className={styles.flag} alt="flag" />
-              <img
-                src={arrow}
-                className={`${styles.arrow} ${openDropDownLang && styles.open}`}
-                alt="arrow dropdown"
-              />
-            </button>
-
-            <ul className={`${styles.list} ${openDropDownLang && styles.open}`}>
-              {Object.entries(LANG).map(([_, key]) => (
-                <li
-                  className={styles.list__item}
-                  key={key}
-                  onClick={() => changeLang(key)}
-                >
-                  {languagesSmallname[key]}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
         </div>
     </div>
   );
