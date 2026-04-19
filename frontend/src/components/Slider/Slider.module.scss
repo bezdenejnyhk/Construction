@@ -1,0 +1,394 @@
+@import "../../styles/responsive.scss";
+
+// Fade-in animation for text
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider {
+  width: 100%;
+  padding: 40px 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.info {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  margin-bottom: 28px;
+  animation: fadeIn 0.45s ease-out both;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--cl-black);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.number {
+  color: var(--cl-primary);
+}
+
+.titleText {
+  color: var(--cl-black);
+    text-align: left;
+}
+
+.description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--cl-black);
+    text-align: left;
+  max-width: 900px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 572px;
+  overflow: hidden;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: left, width, opacity, transform;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+
+  &[data-position="center"] {
+    left: 23%;
+    width: 54%;
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1);
+  }
+
+  &[data-position="left"] {
+    left: 0%;
+    width: 22%;
+    opacity: 0.85;
+    z-index: 1;
+    transform: scale(0.95);
+  }
+
+  &[data-position="right"] {
+    left: 78%;
+    width: 22%;
+    opacity: 0.85;
+    z-index: 1;
+    transform: scale(0.95);
+  }
+
+  &[data-position="far-left"] {
+    left: -24%;
+    width: 22%;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(0.9);
+  }
+
+  &[data-position="far-right"] {
+    left: 102%;
+    width: 22%;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(0.9);
+  }
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--cl-black);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  -webkit-transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background: #fff;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+}
+
+.arrowLeft {
+  left: 24px;
+}
+
+.arrowRight {
+  right: 24px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 36px;
+  height: 5px;
+  border-radius: 3px;
+  border: none;
+  background: #c4c4c4;
+  cursor: pointer;
+  padding: 0;
+  -webkit-transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background: #999;
+  }
+
+  &:active {
+    transform: scaleX(0.9);
+  }
+}
+
+.dotActive {
+  background: var(--cl-primary);
+}
+
+// Desktop <= 1366px
+@include responsive(screen) {
+  .info {
+    padding: 0 60px;
+  }
+
+  .carousel {
+    height: 480px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+// Tablet <= 1024px
+@include responsive(tablet) {
+  .slider {
+    padding: 30px 0;
+  }
+
+  .info {
+    padding: 0 40px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .carousel {
+    height: 380px;
+  }
+
+  .slide {
+    &[data-position="center"] {
+      left: 20%;
+      width: 60%;
+    }
+
+    &[data-position="left"] {
+      left: 0%;
+      width: 18%;
+    }
+
+    &[data-position="right"] {
+      left: 82%;
+      width: 18%;
+    }
+
+    &[data-position="far-left"] {
+      left: -20%;
+      width: 18%;
+    }
+
+    &[data-position="far-right"] {
+      left: 102%;
+      width: 18%;
+    }
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    width: 38px;
+    height: 38px;
+  }
+
+  .arrowLeft {
+    left: 16px;
+  }
+
+  .arrowRight {
+    right: 16px;
+  }
+
+  .dots {
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 28px;
+    height: 4px;
+  }
+}
+
+// Phone <= 768px
+@include responsive(phone) {
+  .slider {
+    padding: 20px 0;
+  }
+
+  .info {
+    padding: 0 20px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .carousel {
+    height: 260px;
+    cursor: default;
+  }
+
+  .slide {
+    &[data-position="center"] {
+      left: 16%;
+      width: 68%;
+    }
+
+    &[data-position="left"] {
+      left: 0%;
+      width: 15%;
+    }
+
+    &[data-position="right"] {
+      left: 85%;
+      width: 15%;
+    }
+
+    &[data-position="far-left"] {
+      left: -16%;
+      width: 15%;
+    }
+
+    &[data-position="far-right"] {
+      left: 101%;
+      width: 15%;
+    }
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .arrowLeft {
+    left: 8px;
+  }
+
+  .arrowRight {
+    right: 8px;
+  }
+
+  .dots {
+    margin-top: 16px;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 22px;
+    height: 4px;
+  }
+}

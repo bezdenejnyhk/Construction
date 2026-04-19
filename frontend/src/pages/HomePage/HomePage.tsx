@@ -7,12 +7,13 @@ import styles from "./HomePage.module.scss";
 import heroImage from "../../images/homepage.png";
 import aboutImage from "../../images/about_image.png";
 import { Service } from "../../components/Service/Service";
-import { chooseUs, services, whoWork } from "./constants";
+import { chooseUs, services, sliderData, whoWork } from "./constants";
 import { ThemeTitle, Title } from "../../components/ui/Title/Title";
 import { ChooseUs } from "../../components/ChooseUs/ChooseUs";
 import { WhoWork } from "../../components/WhoWork/WhoWork";
 import BeforeAfterImage from "../../images/before_after.png";
 import contactsImage from "../../images/contacts.png";
+import Slider from "../../components/Slider/Slider";
 
 export const HomePage: FC = () => {
   const beforeAfterData = {
@@ -98,7 +99,7 @@ export const HomePage: FC = () => {
       </section>
       <section className={styles.work}>
         <Title theme={ThemeTitle.PRIMARY}>How We Work</Title>
-        <p>Slider</p>
+        <Slider sliders={sliderData} />
       </section>
       <section className={styles.chooseUs}>
         <Title theme={ThemeTitle.BLACK}>Why Choose Us?</Title>
