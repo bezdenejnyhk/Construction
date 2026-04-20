@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from "react";
+import { Hero } from "../../components/Hero/Hero";
 import { Button, ThemeButton } from "../../components/ui/Button/Button";
+import { About } from "../../components/About";
 import { BeforeAfter } from "../../components/Before_After/BeforeAfter";
 import { Contacts } from "../../components/Contacts/Contacts";
 
@@ -24,36 +26,25 @@ export const HomePage: FC = () => {
 
   return (
     <div className={styles.container}>
-      <section
-        className={styles.hero}
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className={styles.hero_overlay}></div>
-        <div className={styles.hero_content}>
-          <p className={styles.hero_supertitle}>{content.hero.supertitle}</p>
-          <h1 className={styles.hero_title}>{content.hero.title}</h1>
-          <p className={styles.hero_description}>{content.hero.description}</p>
-          <Button theme={ThemeButton.BLACK}>{content.hero.buttonText}</Button>
-        </div>
-      </section>
+     <Hero
+        idSection="hero"
+        backgroundImage={heroImage}
+        supertitle={content.hero.supertitle}
+        title={content.hero.title}
+        description={content.hero.description}
+        buttonText={content.hero.buttonText}
+      />
 
-      <section className={styles.about} id="about-us">
-        <div className={styles.about_content}>
-          <h2 className={styles.about_title}>{content.about.title}</h2>
+      <About 
+        idSection="about-us"
+        title={content.about.title}
+        text1={content.about.text1}
+        text2={content.about.text2}
+        text3={content.about.text3}
+        imageSrc={aboutImage}
+        imageAlt="Renovation"
+      />
 
-          <p className={styles.about_text}>{content.about.text1}</p>
-          <p className={styles.about_text}>{content.about.text2}</p>
-          <p className={styles.about_text}>{content.about.text3}</p>
-        </div>
-
-        <div className={styles.about_image_wrapper}>
-          <img
-            src={aboutImage}
-            alt="Renovation"
-            className={styles.about_image}
-          />
-        </div>
-      </section>
       <section className={styles.services} id="services">
         <Title theme={ThemeTitle.BLACK}>{content.service.title}</Title>
         <ul className={styles.services_list}>

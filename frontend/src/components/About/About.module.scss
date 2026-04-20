@@ -1,34 +1,35 @@
 @import "../../styles/responsive.scss";
 @import "../../styles/variables/variables.scss";
 
-.beforeAfter {
+.about {
   width: 100%;
-  --cl-secondary:#F4E5D5;
+  background: #f4e5d5;
   padding: 80px 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 160px;
+
 }
 
-.beforeAfter_content {
+.about_content {
   flex: 1;
   max-width: 850px;
 }
 
-.beforeAfter_title {
-  font-family: 'Montserrat', sans-serif;
+.about_title {
+  font-family: "Montserrat", sans-serif;
   font-weight: 550;
   font-size: 46px;
   line-height: 1.3;
-  color:#EFA359;
+  color: rgba(239, 163, 89, 1);
   margin: 0 0 40px 0;
   text-align: left;
   max-width: 1000px;
 }
 
-.beforeAfter_text {
-  font-family: 'Roboto', sans-serif;
+.about_text {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 30px;
   line-height: 1.6;
@@ -37,16 +38,17 @@
   text-align: left;
   max-width: 1400px;
 
-    &:last-child {
+  &:last-child {
     margin-bottom: 0;
   }
 }
 
-.beforeAfter_image_wrapper {
+.about_image_wrapper {
   flex-shrink: 0;
+  order: 2;
 }
 
-.beforeAfter_image {
+.about_image {
   width: 560px;
   height: 783px;
   object-fit: cover;
@@ -54,62 +56,62 @@
 }
 
 @include responsive(tablet) {
-  .beforeAfter {
+  .about {
     padding: 60px 40px;
     gap: 30px;
   }
-
-  .beforeAfter_content {
+  
+  .about_content {
     flex: 0.8;
   }
 
-  .beforeAfter_title {
+  .about_title {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
-  .beforeAfter_text {
+  .about_text {
     font-size: 16px;
     margin-bottom: 16px;
   }
 
-  .beforeAfter_image {
+  .about_image {
     width: 300px;
     height: 420px;
   }
 }
 
 @include responsive(phone) {
-  .beforeAfter {
+  .about {
     flex-direction: column;
     padding: 40px 30px;
     gap: 30px;
-    overflow: hidden;
+    overflow: hidden
   }
 
-  .beforeAfter_content {
+  .about_content {
     width: 100%;
+
   }
 
-  .beforeAfter_title {
-    font-size: 28px;
+  .about_title {
+    font-size: 30px;
     margin-bottom: 20px;
   }
 
-  .beforeAfter_text {
-    font-size: 18px;
+  .about_text {
+    font-size: 14px;
     margin-bottom: 12px;
   }
 
-  .beforeAfter_image_wrapper {
-    order: 2;
+  .about_image_wrapper {
     width: 100vw; // ← Ширина на весь viewport
     margin-left: calc(-50vw + 50%); // ← Растягиваем на всю ширину экрана
     margin-right: calc(-50vw + 50%);
     margin-bottom: 30px;
   }
 
-  .beforeAfter_image {
+  .about_image {
     width: 100%;
     height: auto;
     object-fit: cover;
