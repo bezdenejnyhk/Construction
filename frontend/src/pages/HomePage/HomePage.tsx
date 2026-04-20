@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react";
 import { Hero } from "../../components/Hero/Hero";
-import { Button, ThemeButton } from "../../components/ui/Button/Button";
 import { About } from "../../components/About";
 import { BeforeAfter } from "../../components/Before_After/BeforeAfter";
 import { Contacts } from "../../components/Contacts/Contacts";
@@ -26,7 +25,7 @@ export const HomePage: FC = () => {
 
   return (
     <div className={styles.container}>
-     <Hero
+      <Hero
         idSection="hero"
         backgroundImage={heroImage}
         supertitle={content.hero.supertitle}
@@ -35,7 +34,7 @@ export const HomePage: FC = () => {
         buttonText={content.hero.buttonText}
       />
 
-      <About 
+      <About
         idSection="about-us"
         title={content.about.title}
         text1={content.about.text1}

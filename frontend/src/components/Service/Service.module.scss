@@ -9,11 +9,12 @@
   padding: 39px 30px;
   box-sizing: border-box;
   width: 100%;
-  max-width: 412px;
+  max-width: 480px;
   min-height: 364px;
   border-radius: 7px;
   border: 4px solid var(--cl-primary);
   background: var(--cl-secondary);
+  white-space: pre-wrap;
 }
 
 .title {
@@ -24,6 +25,7 @@
   font-weight: 500;
   line-height: normal;
   text-transform: uppercase;
+  white-space: pre-wrap;
 }
 
 .text {

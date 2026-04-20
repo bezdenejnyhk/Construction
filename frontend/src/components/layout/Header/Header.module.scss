@@ -186,6 +186,18 @@
   .header {
     background-size: 100% 80%;
   }
+
+     .menu {
+    &_routes {
+      display: none;
+    }
+    &_block {
+      display: none;
+    }
+    &_phone_block {
+      display: none;
+    }
+  }
 }
 
 @include responsive(fullscreen) {
