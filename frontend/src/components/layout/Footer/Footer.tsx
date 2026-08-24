@@ -25,9 +25,9 @@ export const Footer: FC = () => {
             </li>
           ))}
         </ul>
-        <a href='tel:+74958034053' className={styles.phone}>
+        <a href='tel:+11111111111' className={styles.phone}>
             <img src={phone} alt="Phone"/>
-            +7 (495) 803-40-53
+            +1 (111) 111-11-11
           </a>
       </div>
     </div>

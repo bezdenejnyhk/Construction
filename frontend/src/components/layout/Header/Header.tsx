@@ -78,8 +78,8 @@ export const Header: FC = () => {
           <div className={styles.phone_block}>
             <img src={phone} alt="Phone" />
             <Gamburger open={openMenu} setOpen={setOpenMenu} />
-            <a href="tel:+74958034053" className={styles.phone}>
-              +7 (495) 803-40-53
+            <a href="tel:+11111111111" className={styles.phone}>
+              +1 (111) 111-11-11
             </a>
           </div>
         </div>
@@ -87,8 +87,8 @@ export const Header: FC = () => {
       <div className={`${styles.menu} ${openMenu && styles.menu_open}`}>
         <div className={styles.menu_phone_block}>
             <img src={phone} alt="Phone" />
-            <a href="tel:+74958034053" className={styles.menu_phone}>
-              +7 (495) 803-40-53
+            <a href="tel:+11111111111" className={styles.menu_phone}>
+              +1 (111) 111-11-11
             </a>
           </div>
                 <ul className={styles.menu_routes}>
