@@ -36,13 +36,13 @@ export const Header: FC = () => {
   return (
     <div className={styles.header}>
       <div className={styles.nav}>
-        <img className={styles.logo} src={logo} alt="Логотип" onClick={() => navigate("/")} />
+        <img className={styles.logo} src={logo} alt="Логотип" onClick={() => navigate(`/${lang}`)} />
         <ul className={styles.routes}>
           {content &&
             "routes" in content &&
             content.routes.map((item: { name: string; path: string; }, index: number) => (
               <li className={styles.routes_item} key={index}>
-                <a href={"#" + item.path} className={styles.link}>
+                <a href={`/${lang}#${item.path}`} className={styles.link}>
                   {item.name}
                 </a>
               </li>
@@ -96,7 +96,7 @@ export const Header: FC = () => {
             "routes" in content &&
             content.routes.map((item: { name: string; path: string; }, index: number) => (
               <li className={styles.menu_routes_item} key={index}>
-                <a href={"#" + item.path} className={styles.menu_link}>
+                <a href={`/${lang}#${item.path}`} className={styles.menu_link}>
                   {item.name}
                 </a>
               </li>

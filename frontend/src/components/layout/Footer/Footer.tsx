@@ -19,7 +19,7 @@ export const Footer: FC = () => {
         <ul className={styles.routes}>
           {content && 'routes' in content && content.routes.map((item, index) => (
             <li className={styles.routes_item} key={index}>
-              <a href={'#'+item.path} className={styles.link}>
+              <a href={`/${lang}#${item.path}`} className={styles.link}>
                 {item.name}
               </a>
             </li>
