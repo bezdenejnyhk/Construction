@@ -54,10 +54,6 @@ export const HomePage: FC = () => {
           ))}
         </ul>
       </section>
-      <section className={styles.work} id="portfolio">
-        <Title theme={ThemeTitle.PRIMARY}>{content.work.title}</Title>
-        <Slider sliders={content.work.sliderData} />
-      </section>
       <section className={styles.chooseUs} id="our-company">
         <Title theme={ThemeTitle.BLACK}>{content.chooseUs.title}</Title>
         <ul className={styles.chooseUs_list}>
@@ -67,6 +63,10 @@ export const HomePage: FC = () => {
             </li>
           ))}
         </ul>
+      </section>
+      <section className={styles.work} id="portfolio">
+        <Title theme={ThemeTitle.PRIMARY}>{content.work.title}</Title>
+        <Slider sliders={content.work.sliderData} />
       </section>
 
       <BeforeAfter
